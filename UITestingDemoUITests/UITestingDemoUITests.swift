@@ -20,4 +20,11 @@ class UITestingDemoUITests: XCTestCase {
         XCTAssert(welcome.exists, "There shall be a static text view.")
         XCTAssertEqual(welcome.label, "Welcome!", "The text view shall contain the text \"Welcome\".")
     }
+
+    func testLoginButton() {
+        let app = XCUIApplication()
+        app.launch()
+        let login = app.buttons["Login"]
+        XCTAssert(login.exists, "There shall be a button with the text \"Login\".")
+    }
 }
