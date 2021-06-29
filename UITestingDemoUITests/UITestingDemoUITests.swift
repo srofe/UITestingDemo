@@ -13,10 +13,10 @@ class UITestingDemoUITests: XCTestCase {
         continueAfterFailure = false
     }
 
-    func testWelcom() throws {
+    func testWelcome() throws {
         let app = XCUIApplication()
         app.launch()
-        let welcome = app.staticTexts["Welcome!"]
+        let welcome = app.staticTexts.element
         XCTAssert(welcome.exists, "There shall be a welcome text with the text \"Welcome!\".")
     }
 }
