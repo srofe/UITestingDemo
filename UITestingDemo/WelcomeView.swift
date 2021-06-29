@@ -21,6 +21,7 @@ struct WelcomeView: View {
             }, label: {
                 Text("Login")
             })
+                .accessibilityIdentifier("loginButton")
         }
     }
 }
