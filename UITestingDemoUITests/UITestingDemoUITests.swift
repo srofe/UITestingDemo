@@ -24,5 +24,6 @@ class UITestingDemoUITests: XCTestCase {
     func testLoginButton() {
         let login = app.buttons["loginButton"]
         XCTAssert(login.exists, "There shall be a button with the accessibility identifier \"loginButton\".")
+        XCTAssertEqual(login.label, "Login")
     }
 }
