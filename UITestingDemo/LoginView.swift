@@ -12,27 +12,29 @@ struct LoginView: View {
     @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
-        Form {
-            Section {
-                TextField("Username", text: $user.username)
-                SecureField("Password", text: $user.password)
-            }
-            Button {
-                if user.login() {
-                    presentationMode.wrappedValue.dismiss()
+        NavigationView {
+            Form {
+                Section {
+                    TextField("Username", text: $user.username)
+                    SecureField("Password", text: $user.password)
                 }
-            } label: {
-                Text("Login")
+                Button {
+                    if user.login() {
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                } label: {
+                    Text("Login")
+                }
+                .accessibilityLabel("loginNow")
             }
-            .accessibilityLabel("loginNow")
+            .navigationTitle(Text("Login"))
+            .navigationBarItems(trailing: Button {
+                presentationMode.wrappedValue.dismiss()
+            } label: {
+                Image(systemName: "xmark.circle")
+                    .accessibilityLabel("Dismiss")
+            })
         }
-        .navigationTitle(Text("Login"))
-        .navigationBarItems(trailing: Button {
-            presentationMode.wrappedValue.dismiss()
-        } label: {
-            Image(systemName: "xmark.circle")
-                .accessibilityLabel("Dismiss")
-        })
     }
 }
 

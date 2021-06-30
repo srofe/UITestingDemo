@@ -26,4 +26,10 @@ class UITestingDemoUITests: XCTestCase {
         XCTAssert(login.exists, "There shall be a button with the accessibility identifier \"loginButton\".")
         XCTAssertEqual(login.label, "Login")
     }
+
+    func testLoginFromAppearance() {
+        app.buttons["loginButton"].tap()
+        let loginNavBarTitle = app.staticTexts["Login"]
+        XCTAssert(loginNavBarTitle.waitForExistence(timeout: 0.5))
+    }
 }
