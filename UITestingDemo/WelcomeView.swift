@@ -23,6 +23,9 @@ struct WelcomeView: View {
             })
                 .accessibilityIdentifier("loginButton")
         }
+        .sheet(isPresented: $showLogin) {
+            LoginView()
+        }
     }
 }
 
