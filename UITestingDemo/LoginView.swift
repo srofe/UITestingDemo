@@ -25,7 +25,7 @@ struct LoginView: View {
                 } label: {
                     Text("Login")
                 }
-                .accessibilityLabel("loginNow")
+                .accessibilityIdentifier("loginNow")
             }
             .navigationTitle(Text("Login"))
             .navigationBarItems(trailing: Button {

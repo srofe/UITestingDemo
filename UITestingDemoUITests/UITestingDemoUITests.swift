@@ -32,4 +32,23 @@ class UITestingDemoUITests: XCTestCase {
         let loginNavBarTitle = app.staticTexts["Login"]
         XCTAssert(loginNavBarTitle.waitForExistence(timeout: 0.5))
     }
+
+    func testLoginForm() {
+        app.buttons["Login"].tap()
+        let navBar = app.navigationBars.element
+        XCTAssert(navBar.exists)
+
+        let username = app.textFields["Username"]
+        XCTAssert(username.exists)
+
+        let password = app.secureTextFields["Password"]
+        XCTAssert(password.exists)
+
+        let login = app.buttons["loginNow"]
+        XCTAssert(login.exists)
+        XCTAssertEqual(login.label, "Login")
+
+        let dismiss = app.buttons["Dismiss"]
+        XCTAssert(dismiss.exists)
+    }
 }
