@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @EnvironmentObject private var user: User
     @Environment(\.presentationMode) var presentationMode
+    @State private var showAlert = false
 
     var body: some View {
         NavigationView {
@@ -21,6 +22,8 @@ struct LoginView: View {
                 Button {
                     if user.login() {
                         presentationMode.wrappedValue.dismiss()
+                    } else {
+                        showAlert = true
                     }
                 } label: {
                     Text("Login")
@@ -34,6 +37,11 @@ struct LoginView: View {
                 Image(systemName: "xmark.circle")
                     .accessibilityLabel("Dismiss")
             })
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("Login Failed"), message: Text("Either username or password is missing, or they are wrong."), dismissButton: Alert.Button.default(Text("OK"), action: {
+                    showAlert = false
+                }))
+            }
         }
     }
 }
