@@ -66,5 +66,6 @@ class UITestingDemoUITests: XCTestCase {
         username.tap()
         username.typeText("test")
         XCTAssertNotEqual(username.value as! String, "")
+        XCTAssertEqual(username.value as? String, "test")
     }
 }
