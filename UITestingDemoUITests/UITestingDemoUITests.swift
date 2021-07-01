@@ -58,4 +58,13 @@ class UITestingDemoUITests: XCTestCase {
         dismiss.tap()
         XCTAssertFalse(dismiss.waitForExistence(timeout: 0.5))
     }
+
+    func testUsername() {
+        app.buttons["Login"].tap()
+
+        let username = app.textFields["Username"]
+        username.tap()
+        username.typeText("test")
+        XCTAssertNotEqual(username.value as! String, "")
+    }
 }
