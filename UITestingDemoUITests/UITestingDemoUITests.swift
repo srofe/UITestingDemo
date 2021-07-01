@@ -51,4 +51,11 @@ class UITestingDemoUITests: XCTestCase {
         let dismiss = app.buttons["Dismiss"]
         XCTAssert(dismiss.exists)
     }
+
+    func testLoginDismiss() {
+        app.buttons["Login"].tap()
+        let dismiss = app.buttons["Dismiss"]
+        dismiss.tap()
+        XCTAssertFalse(dismiss.waitForExistence(timeout: 0.5))
+    }
 }
