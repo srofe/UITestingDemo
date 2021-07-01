@@ -8,18 +8,23 @@
 import SwiftUI
 
 struct WelcomeView: View {
+    @EnvironmentObject private var user: User
     @State private var showLogin = false
 
     var body: some View {
         VStack {
-            Text("Welcome!")
+            Text(user.isLoggedIn ? "Welcome \(user.username)!" : "Welcome!")
                 .font(.title)
             Spacer()
                 .frame(height: 20)
             Button(action: {
-                showLogin = true
+                if user.isLoggedIn {
+                    user.logout()
+                } else {
+                    showLogin = true
+                }
             }, label: {
-                Text("Login")
+                Text(user.isLoggedIn ? "Logout" : "Login")
             })
                 .accessibilityIdentifier("loginButton")
         }
