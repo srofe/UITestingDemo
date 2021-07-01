@@ -68,4 +68,17 @@ class UITestingDemoUITests: XCTestCase {
         XCTAssertNotEqual(username.value as! String, "")
         XCTAssertEqual(username.value as? String, "test")
     }
+
+    func testPassword() {
+        app.buttons["Login"].tap()
+
+        app.secureTextFields.element.tap()
+        app.keys["p"].tap()
+        app.keys["a"].tap()
+        app.keys["s"].tap()
+        app.keys["s"].tap()
+        app.keyboards.buttons["Return"].tap()
+        XCTAssertNotEqual(app.secureTextFields.element.value as? String, "")
+        XCTAssertEqual((app.secureTextFields.element.value as? String)?.count, 4)
+    }
 }
