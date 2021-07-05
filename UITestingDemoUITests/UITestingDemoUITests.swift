@@ -103,6 +103,7 @@ class UITestingDemoUITests: XCTestCase {
         XCTAssert(app.staticTexts["Welcome!"].exists)
         login()
         XCTAssert(app.staticTexts["Welcome test!"].exists)
+        XCTAssertFalse(app.staticTexts["Welcome!"].exists)
     }
 }
 
