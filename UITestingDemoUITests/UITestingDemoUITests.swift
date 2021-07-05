@@ -98,6 +98,12 @@ class UITestingDemoUITests: XCTestCase {
         app.alerts.element.buttons["OK"].tap()
         XCTAssertFalse(app.alerts.element.exists)
     }
+
+    func testWelcomeAfterLogin() {
+        XCTAssert(app.staticTexts["Welcome!"].exists)
+        login()
+        XCTAssert(app.staticTexts["Welcome test!"].exists)
+    }
 }
 
 extension UITestingDemoUITests {
