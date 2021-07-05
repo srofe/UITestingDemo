@@ -83,17 +83,8 @@ class UITestingDemoUITests: XCTestCase {
     }
 
     func testLogin() {
-        app.buttons["Login"].tap()
-
-        app.textFields.element.tap()
-        app.textFields.element.typeText("test")
-
-        app.secureTextFields.element.tap()
-        app.secureTextFields.element.typeText("pass")
-        app.keyboards.buttons["Return"].tap()
-
+        login()
         let loginButton = app.buttons["loginNow"]
-        loginButton.tap()
 
         XCTAssertFalse(loginButton.waitForExistence(timeout: 0.5))
     }
@@ -106,5 +97,20 @@ class UITestingDemoUITests: XCTestCase {
 
         app.alerts.element.buttons["OK"].tap()
         XCTAssertFalse(app.alerts.element.exists)
+    }
+}
+
+extension UITestingDemoUITests {
+    func login() {
+        app.buttons["Login"].tap()
+
+        app.textFields.element.tap()
+        app.textFields.element.typeText("test")
+
+        app.secureTextFields.element.tap()
+        app.secureTextFields.element.typeText("pass")
+        app.keyboards.buttons["Return"].tap()
+
+        app.buttons["loginNow"].tap()
     }
 }
