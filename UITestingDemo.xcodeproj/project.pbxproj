@@ -13,6 +13,8 @@
 		F424EA6D268AC446002DD464 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F424EA6C268AC446002DD464 /* Preview Assets.xcassets */; };
 		F424EA78268AC447002DD464 /* UITestingDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424EA77268AC447002DD464 /* UITestingDemoTests.swift */; };
 		F424EA83268AC447002DD464 /* UITestingDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F424EA82268AC447002DD464 /* UITestingDemoUITests.swift */; };
+		F4FC65C2268BDCF000B4C11B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC65C1268BDCF000B4C11B /* User.swift */; };
+		F4FC65C4268BF27F00B4C11B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC65C3268BF27F00B4C11B /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		F424EA7E268AC447002DD464 /* UITestingDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITestingDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F424EA82268AC447002DD464 /* UITestingDemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestingDemoUITests.swift; sourceTree = "<group>"; };
 		F424EA84268AC447002DD464 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4FC65C1268BDCF000B4C11B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F4FC65C3268BF27F00B4C11B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 			children = (
 				F424EA65268AC446002DD464 /* UITestingDemoApp.swift */,
 				F424EA67268AC446002DD464 /* WelcomeView.swift */,
+				F4FC65C1268BDCF000B4C11B /* User.swift */,
+				F4FC65C3268BF27F00B4C11B /* LoginView.swift */,
 				F424EA69268AC446002DD464 /* Assets.xcassets */,
 				F424EA6E268AC446002DD464 /* Info.plist */,
 				F424EA6B268AC446002DD464 /* Preview Content */,
@@ -261,6 +267,8 @@
 			files = (
 				F424EA68268AC446002DD464 /* WelcomeView.swift in Sources */,
 				F424EA66268AC446002DD464 /* UITestingDemoApp.swift in Sources */,
+				F4FC65C4268BF27F00B4C11B /* LoginView.swift in Sources */,
+				F4FC65C2268BDCF000B4C11B /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
