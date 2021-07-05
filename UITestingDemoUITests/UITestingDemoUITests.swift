@@ -111,6 +111,15 @@ class UITestingDemoUITests: XCTestCase {
         login()
         XCTAssertEqual(app.buttons["loginButton"].label, "Logout")
     }
+
+    func testLogoutUpdatesWelcomPage() {
+        login()
+        XCTAssert(app.staticTexts["Welcome test!"].exists)
+        XCTAssertEqual(app.buttons["loginButton"].label, "Logout")
+        app.buttons["loginButton"].tap()
+        XCTAssert(app.staticTexts["Welcome!"].exists)
+        XCTAssertEqual(app.buttons["loginButton"].label, "Login")
+    }
 }
 
 extension UITestingDemoUITests {
