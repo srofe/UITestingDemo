@@ -129,6 +129,14 @@ class UITestingDemoUITests: XCTestCase {
         colourTheme.buttons["Dark"].tap()
         XCTAssert(colourTheme.buttons["Dark"].isSelected)
     }
+
+    func testTextSize() {
+        login()
+        let textSize = app.sliders["slider"]
+        XCTAssert(textSize.exists)
+        textSize.adjust(toNormalizedSliderPosition: 0.75)
+        XCTAssertGreaterThanOrEqual(textSize.value as! String, "0.7")
+    }
 }
 
 extension UITestingDemoUITests {
