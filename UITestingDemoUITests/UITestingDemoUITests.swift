@@ -120,6 +120,15 @@ class UITestingDemoUITests: XCTestCase {
         XCTAssert(app.staticTexts["Welcome!"].exists)
         XCTAssertEqual(app.buttons["loginButton"].label, "Login")
     }
+
+    func testColourTheme() {
+        login()
+        let colourTheme = app.segmentedControls["colourTheme"]
+        XCTAssert(colourTheme.exists)
+        XCTAssert(colourTheme.buttons["Light"].isSelected)
+        colourTheme.buttons["Dark"].tap()
+        XCTAssert(colourTheme.buttons["Dark"].isSelected)
+    }
 }
 
 extension UITestingDemoUITests {
